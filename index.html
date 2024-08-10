@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Cartoon Boy</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #87CEEB; /* Light blue background */
+        }
+
+        .dancing-boy {
+            position: relative;
+            width: 150px;
+            height: 300px;
+            animation: dance 1s infinite ease-in-out;
+        }
+
+        /* Head */
+        .head {
+            width: 50px;
+            height: 50px;
+            background-color: #FFCC99;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        /* Hair */
+        .hair {
+            width: 40px;
+            height: 20px;
+            background-color: #2c2c2c;
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Eyes */
+        .eye {
+            width: 8px;
+            height: 8px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+        }
+
+        .eye.left {
+            left: 15px;
+        }
+
+        .eye.right {
+            right: 15px;
+        }
+
+        /* Nose */
+        .nose {
+            width: 6px;
+            height: 10px;
+            background-color: #ff9966;
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+
+        /* Ears */
+        .ear {
+            width: 10px;
+            height: 15px;
+            background-color: #FFCC99;
+            position: absolute;
+            top: 20px;
+            border-radius: 50%;
+        }
+
+        .ear.left {
+            left: -5px;
+        }
+
+        .ear.right {
+            right: -5px;
+        }
+
+        /* Body */
+        .body {
+            width: 60px;
+            height: 100px;
+            background-color: #4CAF50; /* Green shirt */
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
+        }
+
+        /* Arms */
+        .arm {
+            width: 20px;
+            height: 80px;
+            background-color: #FFCC99;
+            position: absolute;
+            top: 70px;
+        }
+
+        .arm.left {
+            left: -20px;
+            transform-origin: top;
+            animation: wave 0.5s infinite alternate;
+        }
+
+        .arm.right {
+            right: -20px;
+            transform-origin: top;
+            animation: wave 0.5s infinite alternate-reverse;
+        }
+
+        /* Fingers */
+        .finger {
+            width: 4px;
+            height: 15px;
+            background-color: #FFCC99;
+            position: absolute;
+            top: 65px;
+            border-radius: 2px;
+        }
+
+        .finger.left1 {
+            left: -10px;
+        }
+
+        .finger.left2 {
+            left: -14px;
+        }
+
+        .finger.left3 {
+            left: -18px;
+        }
+
+        .finger.right1 {
+            right: -10px;
+        }
+
+        .finger.right2 {
+            right: -14px;
+        }
+
+        .finger.right3 {
+            right: -18px;
+        }
+
+        /* Legs */
+        .leg {
+            width: 20px;
+            height: 100px;
+            background-color: #000;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .leg.left {
+            left: 20px;
+            transform-origin: top;
+            animation: kick 1s infinite alternate;
+        }
+
+        .leg.right {
+            right: 20px;
+            transform-origin: top;
+            animation: kick 1s infinite alternate-reverse;
+        }
+
+        /* Shoes */
+        .shoe {
+            width: 30px;
+            height: 15px;
+            background-color: #333;
+            position: absolute;
+            bottom: 0;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .shoe.left {
+            left: 5px;
+        }
+
+        .shoe.right {
+            right: 5px;
+        }
+
+        @keyframes dance {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-10px) rotate(-5deg);
+            }
+        }
+
+        @keyframes wave {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-20deg);
+            }
+        }
+
+        @keyframes kick {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-30deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dancing-boy">
+    <div class="head">
+        <div class="hair"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+    </div>
+    <div class="body"></div>
+    <div class="arm left"></div>
+    <div class="arm right"></div>
+    <div class="finger left1"></div>
+    <div class="finger left2"></div>
+    <div class="finger left3"></div>
+    <div class="finger right1"></div>
+    <div class="finger right2"></div>
+    <div class="finger right3"></div>
+    <div class="leg left">
+        <div class="shoe left"></div>
+    </div>
+    <div class="leg right">
+        <div class="shoe right"></div>
+    </div>
+</div>
+
+</body>
+</html>
